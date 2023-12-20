@@ -27,10 +27,15 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, usern
     print("Sniped")
 
     local function formatTimeAndOffset(timeFormat, hourOffset)
-        return os.date(
+        local currentTimeUTC = os.time(os.date("!*t"))
+        local offsetSeconds = hourOffset * 3600
+        local adjustedTime = currentTimeUTC + offsetSeconds
+        local formattedTime = os.date(
             timeFormat == "12h" and "%I:%M:%S %p" or "%H:%M:%S",
-            os.time() + (hourOffset and hourOffset * 3600 or 0)
+            adjustedTime
         ):gsub("^%s*(.-)%s*$", "%1")
+    
+        return formattedTime
     end
 
     local SaveModule = require(game.ReplicatedStorage.Library.Client.Save)
