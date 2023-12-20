@@ -1,4 +1,4 @@
-task.wait(15)
+task.wait(5)
 getgenv().config = {
 	placeId = 8737899170,
 	eventName = "Gingerbread",
@@ -8,13 +8,13 @@ getgenv().config = {
 		pageDeep = math.random(2, 6)
 	},
 	delays = {
-		beforeExecute = 0.3,
-		beforeBreak = 1.5,
-		afterBreak = 2.4,
+		beforeExecute = 0.2,
+		beforeBreak = 1.2,
+		afterBreak = 2.1,
 		hit = 0.03,
 		lootbag = 0.03,
 		beforeTp = 2,
-		whileError = 10
+		whileError = 5
 	}
 }
 if not getgenv().config then
@@ -23,17 +23,17 @@ if not getgenv().config then
 		eventName = "Gingerbread",
 		servers = {
 			count = 100,
-			sort = "Asc",
+			sort = "Desc",
 			pageDeep = math.random(2, 6)
 		},
 		delays = {
-			beforeExecute = 0.3,
-			beforeBreak = 1.5,
-			afterBreak = 2.4,
+			beforeExecute = 0.2,
+			beforeBreak = 1.2,
+			afterBreak = 2.1,
 			hit = 0.03,
 			lootbag = 0.03,
 			beforeTp = 2,
-			whileError = 10
+			whileError = 5
 		}
 	}
 end;
