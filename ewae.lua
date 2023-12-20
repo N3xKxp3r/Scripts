@@ -26,25 +26,6 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, usern
     snipeMessage = snipeMessage .. " " .. item
     print("Sniped")
 
-    local function formatNumberWithSuffix(number)
-        local suffixes = {"", "k", "m", "b", "t", "q", "qa"}
-        local suffixIndex = 1
-        while number >= 1000 and suffixIndex < #suffixes do
-            number = number / 1000
-            suffixIndex = suffixIndex + 1
-        end
-        return string.format("%.2f%s", number, suffixes[suffixIndex])
-    end
-    
-    local function getCurrencyAmount(currencyId)
-        for _, currency in pairs(playerData.Inventory.Currency) do
-            if currency.id == currencyId then
-                return currency._am
-            end
-        end
-        return 0
-    end
-
     local function formatTimeAndOffset(timeFormat, hourOffset)
         return os.date(
             timeFormat == "12h" and "%I:%M:%S %p" or "%H:%M:%S",
@@ -54,7 +35,6 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, usern
 
     local SaveModule = require(game.ReplicatedStorage.Library.Client.Save)
     local playerData = SaveModule.Get()
-    local diamondsAmount = getCurrencyAmount('Diamonds')
 
     local currentTime = formatTimeAndOffset(getgenv().Config.Settings.timeFormat, getgenv().Config.Settings.hourOffset)
     local timezoneInfo = "GMT" .. (getgenv().Config.Settings.hourOffset >= 0 and "+" or "") .. getgenv().Config.Settings.hourOffset
@@ -65,8 +45,7 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, usern
         { name = "Amount:", value = tostring(amount), inline = false },
         { name = "Pet ID:", value = tostring(uid), inline = false },
         { name = "Price:", value = tostring(gems) .. " Gems", inline = false },
-        { name = "Remaining Gems:", value = tostring(formatNumberWithSuffix(diamondsAmount)) .. " Gems", inline = false },
-        { name = "Sniped From:", value = string.format("%s (%s)", username, playerID), inline = false },
+        { name = "Sniped From:", value = tostring(username), inline = false },
         { name = "Alt:", value = game.Players.LocalPlayer.Name, inline = false }
     }
 
