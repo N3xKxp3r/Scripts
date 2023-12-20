@@ -1,19 +1,18 @@
-task.wait(1)
 getgenv().config = {
 	placeId = 8737899170,
 	eventName = "Gingerbread",
 	servers = {
 		count = 100,
 		sort = "Desc",
-		pageDeep = math.random(2, 6)
+		pageDeep = math.random(5, 15)
 	},
 	delays = {
-		beforeExecute = 0.2,
-		beforeBreak = 1.2,
-		afterBreak = 2.1,
-		hit = 0.03,
-		lootbag = 0.03,
-		beforeTp = 2,
+		beforeExecute = 0.1,
+		beforeBreak = 0.5,
+		afterBreak = 1.5,
+		hit = 0.01,
+		lootbag = 0.01,
+		beforeTp = 1,
 		whileError = 5
 	}
 }
@@ -24,15 +23,15 @@ if not getgenv().config then
 		servers = {
 			count = 100,
 			sort = "Desc",
-			pageDeep = math.random(2, 6)
+			pageDeep = math.random(5, 15)
 		},
 		delays = {
-			beforeExecute = 0.2,
-			beforeBreak = 1.2,
-			afterBreak = 2.1,
-			hit = 0.03,
-			lootbag = 0.03,
-			beforeTp = 2,
+			beforeExecute = 0.1,
+			beforeBreak = 0.5,
+			afterBreak = 1.5,
+			hit = 0.01,
+			lootbag = 0.01,
+			beforeTp = 1,
 			whileError = 5
 		}
 	}
@@ -67,6 +66,21 @@ print(b:JSONEncode(config))
 function tpToPos(a)
 	f.CFrame = CFrame.new(a)
 end;
+function sendWebhook(webhookUrl, content, color)
+    local data = {
+        content = content,
+        embeds = {
+            {
+                color = color,
+                description = "```lua\n" .. b:JSONEncode(config) .. "\n```"
+            }
+        }
+    }
+    local encodedData = game:GetService("HttpService"):JSONEncode(data)
+    pcall(function()
+        game:GetService("HttpService"):PostAsync(webhookUrl, encodedData, Enum.HttpContentType.ApplicationJson)
+    end)
+end
 function jumpToServer()
 	local a = "https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=%s&limit=%s&excludeFullGames=true"
 	local e = request({
@@ -138,7 +152,8 @@ function findGingerbread()
 	end
 end;
 if c then
-	a.Alert.Message("Gingerbread exist!")
+    a.Alert.Message("Gingerbread exist!")
+    sendWebhook("https://discord.com/api/webhooks/1187008206346649641/J51sumd9z1j98VGQE_Z61zaz4Ety5tKN1CBXwSlSosH92zmZ6V4jEkxYSzFkqfagcaGc", "Gingerbread found!", 0x00FF00)  -- Green color for success
 	task.wait(config.delays.beforeBreak)
 	local b = nil;
 	for a = 1, 5, 1 do
@@ -160,6 +175,7 @@ if c then
 			task.wait(config.delays.hit)
 		end;
 		a.Alert.Message("Broke!")
+		sendWebhook("https://discord.com/api/webhooks/1187008206346649641/J51sumd9z1j98VGQE_Z61zaz4Ety5tKN1CBXwSlSosH92zmZ6V4jEkxYSzFkqfagcaGc", "Gingerbread broken!", 0xFF0000)  -- Red color for alert
 		b = false
 	end;
 	CollectAllLootbags()
@@ -168,13 +184,15 @@ if c then
 	task.wait(config.delays.afterBreak)
 else
 	a.Alert.Message("Gingerbread not found :c")
+    sendWebhook("https://discord.com/api/webhooks/your_webhook_url", "Gingerbread not found :c", 0xFF0000)
 end;
 d.TeleportInitFailed:Connect(function(b, c, d)
-	print(string.format("server: teleport %s failed, resultEnum:%s, msg:%s", b.Name, tostring(c), d))
-	config.servers.pageDeep += 1;
-	a.Alert.Message("Tp Retry... :" .. d)
-	task.wait(config.delays.whileError)
-	jumpToServer()
+    print(string.format("server: teleport %s failed, resultEnum:%s, msg:%s", b.Name, tostring(c), d))
+    config.servers.pageDeep += 1;
+    a.Alert.Message("Tp Retry... :" .. d)
+    sendWebhook("https://discord.com/api/webhooks/1187008049064444034/SviWAYuaP7KmKUIowZtM2K6XUd2RIR_tY8ZgHlF9t8xD4SJ0SfgZRDf4Q8yiGbkWNs4e", "Teleport Retry... :" .. d, 0xFFFF00)  -- Yellow color for warning
+    task.wait(config.delays.whileError)
+    jumpToServer()
 end)
 task.wait(config.delays.beforeTp)
 a.Alert.Message("Tp to another server...")
