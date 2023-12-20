@@ -1,4 +1,4 @@
-task.wait(5)
+task.wait(1)
 getgenv().config = {
 	placeId = 8737899170,
 	eventName = "Gingerbread",
