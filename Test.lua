@@ -12,17 +12,17 @@ local Settings = {
     },
     Teleport = {
         MaxRetries = 10,
-        RetryDelay = 2.5,
-        BeforeTeleportDelay = 1.5
+        RetryDelay = 5,
+        BeforeTeleportDelay = 2.5
     },
     Delays = {
-        BeforeExecute = 0.5,
-        BeforeBreak = 0.5,
+        BeforeExecute = 1,
+        BeforeBreak = 1,
         AfterBreak = 2,
         Hit = 0.1,
         Lootbag = 0.1,
-        BeforeTp = 2,
-        WhileError = 2.5
+        BeforeTp = 3,
+        WhileError = 5
     },
     placeId = 8737899170,
     eventName = "Gingerbread",
