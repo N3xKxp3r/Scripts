@@ -45,7 +45,7 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, usern
         { name = "Amount:", value = tostring(amount), inline = false },
         { name = "Pet ID:", value = tostring(uid), inline = false },
         { name = "Price:", value = tostring(gems) .. " Gems", inline = false },
-        { name = "Sniped From:", value = string.format("%s (%s)", username, playerID), inline = false },
+        { name = "Sniped From:", value = tostring(username), inline = false },
         { name = "Alt:", value = game.Players.LocalPlayer.Name, inline = false }
     }
 
