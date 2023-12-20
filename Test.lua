@@ -1,231 +1,266 @@
-task.wait(5)
-local Settings = {
-    Webhook = {
-        URL = "https://discord.com/api/webhooks/1187008049064444034/SviWAYuaP7KmKUIowZtM2K6XUd2RIR_tY8ZgHlF9t8xD4SJ0SfgZRDf4Q8yiGbkWNs4e",
-        Colors = {
-            Success = 0x00FF00,
-            Alert = 0xFF0000,
-            Warning = 0xFFFF00
-        },
-        Footer = {
-            Text = "Made by N3xKxp3r",
-        }
+getgenv().Config = {
+    ["Items"] = {
+        ["Prince Donkey"] = {price = 15, maxAmount = 1000},
+        ["Princess Dragon"] = {price = 15, maxAmount = 1000},
+        ["Fortune"] = {price = 15, maxAmount = 1000},
+        ["Charm Stone"] = {price = 15, maxAmount = 1000},
+        ["Titanic Christmas Present"] = {price = 15, maxAmount = 1000},
+        ["Medium Christmas"] = {price = 15, maxAmount = 1000},
+        ["Large Christmas Present"] = {price = 15, maxAmount = 1000},
+        ["X-Large Christmas Present"] = {price = 15, maxAmount = 1000},
+        ["Small Christmas Present"] = {price = 15, maxAmount = 1000},
+        ["Hot Cocoa"] = {price = 15, maxAmount = 1000},
+        ["Candycane"] = {price = 15, maxAmount = 1000},
+        ["Christmas Cookie"] = {price = 15, maxAmount = 1000},
+        ["Fortune Flag"] = {price = 15, maxAmount = 1000},
+        ["Diamonds Flag"] = {price = 15, maxAmount = 1000},
+        ["Coins Flag"] = {price = 15, maxAmount = 1000},
+        ["Magnet Flag"] = {price = 15, maxAmount = 1000},
+        ["Hasty Flag"] = {price = 15, maxAmount = 1000},
+        ["Royalty Charm"] = {price = 15, maxAmount = 1000},
+        ["Glittering Charm"] = {price = 15, maxAmount = 1000},
+        ["Strength Charm"] = {price = 15, maxAmount = 1000},
+        ["Diamonds Charm"] = {price = 15, maxAmount = 1000},
+        ["Coins Charm"] = {price = 15, maxAmount = 1000},
+        ["Bonus Charm"] = {price = 15, maxAmount = 1000},
+        ["Insta-Plant Capsule"] = {price = 15, maxAmount = 1000},
+        ["Golden Watering Can"] = {price = 15, maxAmount = 1000},
+        ["Banana"] = {price = 15, maxAmount = 1000},
+        ["Apple"] = {price = 15, maxAmount = 1000},
+        ["Pineapple"] = {price = 15, maxAmount = 1000},
+        ["Orange"] = {price = 15, maxAmount = 1000},
+        ["Golden Shovel"] = {price = 15, maxAmount = 1000},
+        ["Golden Fishing Rod"] = {price = 15, maxAmount = 1000},
+        ["Toy Bone"] = {price = 15, maxAmount = 1000},
+        ["Toy Ball"] = {price = 15, maxAmount = 1000},
+        ["Clan Voucher"] = {price = 15, maxAmount = 1000},
+        ["Rainbow Fruit"] = {price = 15, maxAmount = 1000},
+        ["Gift Bag"] = {price = 15, maxAmount = 1000},
+        ["Large Gift Bag"] = {price = 15, maxAmount = 1000},
+        ["Agility Charm"] = {price = 15, maxAmount = 1000},
+        ["Spinny Wheel Ticket"] = {price = 15, maxAmount = 1000},
+        ["Booth Slot Voucher"] = {price = 15, maxAmount = 1000},
+        ["Magic Coin Jar"] = {price = 15, maxAmount = 1000},
+        ["Crystal Key"] = {price = 15, maxAmount = 1000},
+        ["Crystal Key: Upper Half"] = {price = 15, maxAmount = 1000},
+        ["Crystal Key: Lower Half"] = {price = 15, maxAmount = 1000},
+        ["Basic Coin Jar"] = {price = 15, maxAmount = 1000},
+        ["TNT"] = {price = 15, maxAmount = 1000},
+        ["Comet"] = {price = 15, maxAmount = 1000},
+        ["Giant Coin Jar"] = {price = 15, maxAmount = 1000},
+        ["Squeaky Toy"] = {price = 15, maxAmount = 1000},
+        ["TNT Crate"] = {price = 15, maxAmount = 1000},
+        ["Nametag"] = {price = 15, maxAmount = 1000},
+        ["Coins I"] = {price = 15, maxAmount = 1000},
+        ["Coins II"] = {price = 15, maxAmount = 1000},
+        ["Coins III"] = {price = 15, maxAmount = 1000},
+        ["Coins IV"] = {price = 15, maxAmount = 1000},
+        ["Coins V"] = {price = 15, maxAmount = 1000},
+        ["Tap Power I"] = {price = 15, maxAmount = 1000},
+        ["Tap Power II"] = {price = 15, maxAmount = 1000},
+        ["Tap Power III"] = {price = 15, maxAmount = 1000},
+        ["Tap Power IV"] = {price = 15, maxAmount = 1000},
+        ["Tap Power V"] = {price = 15, maxAmount = 1000},
+        ["Criticals I"] = {price = 15, maxAmount = 1000},
+        ["Criticals II"] = {price = 15, maxAmount = 1000},
+        ["Criticals III"] = {price = 15, maxAmount = 1000},
+        ["Criticals IV"] = {price = 15, maxAmount = 1000},
+        ["Criticals V"] = {price = 15, maxAmount = 1000},
+        ["Strong Pets I"] = {price = 15, maxAmount = 1000},
+        ["Strong Pets II"] = {price = 15, maxAmount = 1000},
+        ["Strong Pets III"] = {price = 15, maxAmount = 1000},
+        ["Strong Pets IV"] = {price = 15, maxAmount = 1000},
+        ["Strong Pets V"] = {price = 15, maxAmount = 1000},
+        ["Treasure Hunter I"] = {price = 15, maxAmount = 1000},
+        ["Treasure Hunter II"] = {price = 15, maxAmount = 1000},
+        ["Treasure Hunter III"] = {price = 15, maxAmount = 1000},
+        ["Treasure Hunter IV"] = {price = 15, maxAmount = 1000},
+        ["Treasure Hunter V"] = {price = 15, maxAmount = 1000},
+        ["Magnet I"] = {price = 15, maxAmount = 1000},
+        ["Magnet II"] = {price = 15, maxAmount = 1000},
+        ["Magnet III"] = {price = 15, maxAmount = 1000},
+        ["Speed I"] = {price = 15, maxAmount = 1000},
+        ["Speed II"] = {price = 15, maxAmount = 1000},
+        ["Speed III"] = {price = 15, maxAmount = 1000},
+        ["Speed IV"] = {price = 15, maxAmount = 1000},
+        ["Speed V"] = {price = 15, maxAmount = 1000},
+        ["Diamonds I"] = {price = 15, maxAmount = 1000},
+        ["Diamonds II"] = {price = 15, maxAmount = 1000},
+        ["Diamonds III"] = {price = 15, maxAmount = 1000},
+        ["Diamonds IV"] = {price = 15, maxAmount = 1000},
+        ["Diamonds V"] = {price = 15, maxAmount = 1000},
+        ["Lucky Eggs I"] = {price = 15, maxAmount = 1000},
+        ["Lucky Eggs II"] = {price = 15, maxAmount = 1000},
+        ["Lucky Eggs III"] = {price = 15, maxAmount = 1000},
+        ["Lucky Eggs IV"] = {price = 15, maxAmount = 1000},
+        ["Lucky Eggs V"] = {price = 15, maxAmount = 1000},
+        ["Starfall"] = {price = 15, maxAmount = 1000},
+        ["Super Lightning"] = {price = 15, maxAmount = 1000},
+        ["Tap Teamwork"] = {price = 15, maxAmount = 1000},
+        ["Happy Pets"] = {price = 15, maxAmount = 1000},
+        ["Lightning"] = {price = 15, maxAmount = 1000},
+        ["Blast"] = {price = 15, maxAmount = 1000},
+        ["Chest Breaker"] = {price = 15, maxAmount = 1000},
+        ["Exotic Pet"] = {price = 15, maxAmount = 1000},
+        ["Huge Hunter"] = {price = 15, maxAmount = 1000},
+        ["Lucky Block"] = {price = 15, maxAmount = 1000},
+        ["Chest Mimic Fortune"] = {price = 15, maxAmount = 1000},
+        ["Shiny Hunter"] = {price = 15, maxAmount = 1000},
+        ["Fireworks"] = {price = 15, maxAmount = 1000},
+        ["Midas Touch"] = {price = 15, maxAmount = 1000},
+        ["Speed Potion I"] = {price = 15, maxAmount = 1000},
+        ["Speed Potion II"] = {price = 15, maxAmount = 1000},
+        ["Speed Potion III"] = {price = 15, maxAmount = 1000},
+        ["Speed Potion IV"] = {price = 15, maxAmount = 1000},
+        ["Speed Potion V"] = {price = 15, maxAmount = 1000},
+        ["Speed Potion VI"] = {price = 15, maxAmount = 1000},
+        ["Treasure Hunter Potion I"] = {price = 15, maxAmount = 1000},
+        ["Treasure Hunter Potion II"] = {price = 15, maxAmount = 1000},
+        ["Treasure Hunter Potion III"] = {price = 15, maxAmount = 1000},
+        ["Treasure Hunter Potion IV"] = {price = 15, maxAmount = 1000},
+        ["Treasure Hunter Potion V"] = {price = 15, maxAmount = 1000},
+        ["Treasure Hunter Potion VI"] = {price = 15, maxAmount = 1000},
+        ["Lucky Potion I"] = {price = 15, maxAmount = 1000},
+        ["Lucky Potion II"] = {price = 15, maxAmount = 1000},
+        ["Lucky Potion III"] = {price = 15, maxAmount = 1000},
+        ["Lucky Potion IV"] = {price = 15, maxAmount = 1000},
+        ["Lucky Potion V"] = {price = 15, maxAmount = 1000},
+        ["Lucky Potion VI"] = {price = 15, maxAmount = 1000},
+        ["Diamonds Potion I"] = {price = 15, maxAmount = 1000},
+        ["Diamonds Potion II"] = {price = 15, maxAmount = 1000},
+        ["Diamonds Potion III"] = {price = 15, maxAmount = 1000},
+        ["Diamonds Potion IV"] = {price = 15, maxAmount = 1000},
+        ["Diamonds Potion V"] = {price = 15, maxAmount = 1000},
+        ["Diamonds Potion VI"] = {price = 15, maxAmount = 1000},
+        ["Damage Potion I"] = {price = 15, maxAmount = 1000},
+        ["Damage Potion II"] = {price = 15, maxAmount = 1000},
+        ["Damage Potion III"] = {price = 15, maxAmount = 1000},
+        ["Damage Potion IV"] = {price = 15, maxAmount = 1000},
+        ["Damage Potion V"] = {price = 15, maxAmount = 1000},
+        ["Damage Potion VI"] = {price = 15, maxAmount = 1000},
+        ["Coins Potion I"] = {price = 15, maxAmount = 1000},
+        ["Coins Potion II"] = {price = 15, maxAmount = 1000},
+        ["Coins Potion III"] = {price = 15, maxAmount = 1000},
+        ["Coins Potion IV"] = {price = 15, maxAmount = 1000},
+        ["Coins Potion V"] = {price = 15, maxAmount = 1000},
+        ["Coins Potion VI"] = {price = 15, maxAmount = 1000},
+        ["The Cocktail"] = {price = 15, maxAmount = 1000},
     },
-    Teleport = {
-        MaxRetries = 10,
-        RetryDelay = 5,
-        BeforeTeleportDelay = 2.5
-    },
-    Delays = {
-        BeforeExecute = 1,
-        BeforeBreak = 1,
-        AfterBreak = 2,
-        Hit = 0.1,
-        Lootbag = 0.1,
-        BeforeTp = 3,
-        WhileError = 5
-    },
-    placeId = 8737899170,
-    eventName = "Gingerbread",
-    servers = {
-        count = 100,
-        sort = "Desc",
-        pageDeep = math.random(5, 15)
-    },
+    ["Settings"] = {
+        ["timeFormat"] = "24h",
+        ["hourOffset"] = 1,
+    }
 }
 
-repeat
-    task.wait()
-until game.PlaceId ~= nil
+local function processListingInfo(uid, gems, item, version, shiny, amount, username, playerID)
 
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
+    local versionText
+    if version == 2 then
+        versionText = "Rainbow"
+    elseif version == 1 then
+        versionText = "Golden"
+    else
+        versionText = "Normal"
+    end
 
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local HttpService = game:GetService("HttpService")
-local Players = game:GetService("Players")
-local TeleportService = game:GetService("TeleportService")
+    local snipeMessage = versionText
+    if shiny then
+        snipeMessage = snipeMessage .. " Shiny"
+    end
+    snipeMessage = snipeMessage .. " " .. item
+    print("Sniped")
 
-task.wait(Settings.Delays.BeforeExecute)
+    local function formatTimeAndOffset(timeFormat, hourOffset)
+        local currentTimeUTC = os.time(os.date("!*t"))
+        local offsetSeconds = hourOffset * 3600
+        local adjustedTime = currentTimeUTC + offsetSeconds
+        local formattedTime = os.date(
+            timeFormat == "12h" and "%I:%M:%S %p" or "%H:%M:%S",
+            adjustedTime
+        ):gsub("^%s*(.-)%s*$", "%1")
+    
+        return formattedTime
+    end
 
-if game.PlaceId ~= Settings.placeId then
-    print("Gingerbread hunter unloaded, unknown place.")
-    return
-end
+    local SaveModule = require(game.ReplicatedStorage.Library.Client.Save)
+    local playerData = SaveModule.Get()
 
-local Library = require(ReplicatedStorage:WaitForChild("Library", 2000))
-if not Library.Loaded then
-    repeat
-        task.wait()
-    until Library.Loaded ~= false
-end
+    local currentTime = formatTimeAndOffset(getgenv().Config.Settings.timeFormat, getgenv().Config.Settings.hourOffset)
+    local timezoneInfo = "GMT" .. (getgenv().Config.Settings.hourOffset >= 0 and "+" or "") .. getgenv().Config.Settings.hourOffset
 
-local RandomEventCmds = Library.RandomEventCmds
-local LocalPlayer = Players.LocalPlayer
-local Character = LocalPlayer.Character
-local Humanoid = Character:WaitForChild("Humanoid", 1000)
-local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart", 1000)
-
-local function teleportToPosition(position)
-    HumanoidRootPart.CFrame = CFrame.new(position)
-end
-
-local function sendWebhook(content, color, title, description)
-    local data = {
-        content = content,
-        embeds = {
-            {
-                title = title,
-                description = description,
-                color = color,
-                footer = {
-                    text = Settings.Webhook.Footer.Text
-                }
-            }
-        }
+    local fields = {
+        { name = "Item Name:", value = "||**" .. item .. "**||", inline = false }, -- Change 'Pet Name' to 'Item Name'
+        { name = "Version:", value = "||**" .. (getgenv().Config.Items[item] and versionText or "N/A") .. (shiny and " Shiny" or "") .. "**||", inline = false },
+        { name = "Amount:", value = "||**" .. tostring(amount) .. "**||", inline = false },
+        { name = "Item ID:", value = "||**" .. tostring(uid) .. "**||", inline = false }, -- Change 'Pet ID' to 'Item ID'
+        { name = "Price:", value = "||**" .. tostring(gems) .. " Gems**||", inline = false },
+        { name = "Sniped From:", value = "||**" .. tostring(username) .. "**||", inline = false },
+        { name = "Alt:", value = "**" .. game.Players.LocalPlayer.Name .. "**", inline = false }
     }
 
-    local encodedData = HttpService:JSONEncode(data)
-    pcall(function()
-        HttpService:PostAsync(Settings.Webhook.URL, encodedData, Enum.HttpContentType.ApplicationJson)
-    end)
+    local message = {
+        content = "New Item Sniped!",'
+        embeds = {
+            {
+                title = snipeMessage,
+                fields = fields,
+                author = { name = "New Item Sniped!" },
+                footer = {
+                    text = "**Sniped at " .. currentTime + 5 .. " | Timezone: " .. timezoneInfo .. "**"
+                },
+            }
+        },
+        username = "N3xKxp3r",
+        attachments = {}
+    }
+
+    local http = game:GetService("HttpService")
+    local jsonMessage = http:JSONEncode(message)
+
+    http:PostAsync(
+        "https://discord.com/api/webhooks/1183417697707507732/PTTSxQHkOtzQMJTIk3Sick5FL7u6Dn-sgusAeHMMa-qYq8aGoVN_XZKnTw7Ha83W9WW-",
+        jsonMessage,
+        Enum.HttpContentType.ApplicationJson,
+        false
+    )
 end
 
-local function sendSuccessWebhook(title, description)
-    sendWebhook("Success", Settings.Webhook.Colors.Success, title, description)
-end
+local function checkListing(uid, gems, item, version, shiny, amount, username, playerID)
+    gems = tonumber(gems)
 
-local function sendAlertWebhook(title, description)
-    sendWebhook("Alert", Settings.Webhook.Colors.Alert, title, description)
-end
+    if getgenv().Config.Items[item] then
+        local itemInfo = getgenv().Config.Items[item]
 
-local function sendWarningWebhook(title, description)
-    sendWebhook("Warning", Settings.Webhook.Colors.Warning, title, description)
-end
+        if gems <= itemInfo.price and amount <= itemInfo.maxAmount then
+            game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerID, uid)
 
-local function jumpToServer()
-    local urlFormat = "https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=%s&limit=%s&excludeFullGames=true"
-    local response = request({
-        Url = string.format(urlFormat, Settings.placeId, Settings.servers.sort, Settings.servers.count)
-    })
-
-    local serverData = HttpService:JSONDecode(response.Body)
-
-    if Settings.servers.pageDeep > 1 then
-        for count = 1, Settings.servers.pageDeep, 1 do
-            response = request({
-                Url = string.format(urlFormat .. "&cursor=" .. serverData.nextPageCursor, Settings.placeId, Settings.servers.sort, Settings.servers.count)
-            })
-            serverData = HttpService:JSONDecode(response.Body)
-            task.wait(0.1)
+            processListingInfo(uid, gems, item, version, shiny, amount, username, playerID)
         end
     end
+end
 
-    local servers = {}
-    if serverData and serverData.data then
-        for _, server in next, serverData.data do
-            if type(server) == "table" then
-                table.insert(servers, 1, server.id)
+game:GetService("ReplicatedStorage").Network:WaitForChild("Booths_Broadcast").OnClientEvent:Connect(function(username, message)
+    local playerID = message['PlayerID']
+    if type(message) == "table" then
+        local listing = message["Listings"]
+        for key, value in pairs(listing) do
+            if type(value) == "table" then
+                local uid = key
+                local gems = value["DiamondCost"]
+                local itemdata = value["ItemData"]
+                if itemdata then
+                    local data = itemdata["data"]
+                    if data then
+                        local item = data["id"]
+                        local version = data["pt"]
+                        local shiny = data["sh"]
+                        local amount = data["_am"]
+                        checkListing(uid, gems, item, version, shiny, amount, username, playerID)
+                    end
+                end
             end
         end
     end
-
-    local serverCount = #servers
-    if not serverCount then
-        serverCount = 2
-    end
-
-    TeleportService:TeleportToPlaceInstance(Settings.placeId, servers[math.random(1, serverCount)], Players.LocalPlayer)
-end
-
-Library.Alert.Message("Finding Gingerbread...")
-sendWebhook("Finding Gingerbread!", Settings.Webhook.Colors.Info, "Gingerbread Hunt", "Looking for Gingerbread!")
-
-local activeEvents = RandomEventCmds.GetActive() or RandomEventCmds.GetActive()
-local gingerbreadFound = false
-
-task.wait(Settings.Delays.BeforeExecute)
-
-for _, event in activeEvents do
-    if event.name == Settings.eventName then
-        gingerbreadFound = true
-        teleportToPosition(event.origin + Vector3.new(0, 18, 0))
-    end
-end
-
-ReplicatedStorage.Things:FindFirstChild("Lootbags").ChildAdded:Connect(function(lootbag)
-    task.wait()
-    if lootbag then
-        ReplicatedStorage.Network.Lootbags_Claim:FireServer(unpack({{lootbag.Name}}))
-    end
 end)
 
-local function collectAllLootbags()
-    pcall(function()
-        for _, lootbag in pairs(ReplicatedStorage.Things:FindFirstChild("Lootbags"):GetChildren()) do
-            if lootbag and not lootbag:GetAttribute("Collected") then
-                ReplicatedStorage.Network.Lootbags_Claim:FireServer(unpack({{lootbag.Name}}))
-                task.wait(Settings.Delays.Lootbag)
-            end
-        end
-    end)
-end
-
-local function findGingerbread()
-    for _, breakable in ReplicatedStorage.Things.Breakables:GetChildren() do
-        if breakable.ClassName == "Model" and breakable:GetAttribute("BreakableID") == Settings.eventName then
-            return breakable
-        end
-    end
-end
-
-if gingerbreadFound then
-    sendSuccessWebhook("Gingerbread Found", "Gingerbread has been located!")
-
-    task.wait(Settings.Delays.BeforeBreak)
-    local gingerbreadModel = nil
-
-    for attempt = 1, Settings.Teleport.MaxRetries, 1 do
-        gingerbreadModel = findGingerbread()
-
-        if gingerbreadModel then
-            teleportToPosition(gingerbreadModel.PrimaryPart.Position + Vector3.new(0, 18, 0))
-            break
-        else
-            task.wait(Settings.Teleport.RetryDelay)
-        end
-    end
-
-    if gingerbreadModel then
-        sendWebhook("Start Breaking!", Settings.Webhook.Colors.Success, "Breaking Gingerbread", "Preparing to break Gingerbread!")
-
-        while ReplicatedStorage.Things.Breakables:FindFirstChild(gingerbreadModel.Name) do
-            local damageData = {{gingerbreadModel.Name}}
-            ReplicatedStorage.Network.Breakables_PlayerDealDamage:FireServer(unpack(damageData))
-            task.wait(Settings.Delays.Hit)
-        end
-
-		sendAlertWebhook("Gingerbread Broken", "The Gingerbread has been successfully broken!")
-
-        gingerbreadModel = false
-    end
-
-    collectAllLootbags()
-    task.wait(Settings.Delays.AfterBreak)
-    collectAllLootbags()
-    task.wait(Settings.Delays.AfterBreak)
-else
-    sendWebhook("Gingerbread not found ", Settings.Webhook.Colors.Alert, "Gingerbread Not Found", "Unable to locate Gingerbread.")
-end
-
-TeleportService.TeleportInitFailed:Connect(function(server, resultEnum, message)
-    Settings.servers.pageDeep = Settings.servers.pageDeep + 1
-    sendEventUpdate("Teleport Retry", "Retrying teleport... :" .. message, Settings.Webhook.Colors.Warning)
-    task.wait(Settings.Delays.WhileError)
-    jumpToServer()
-end)
-
-task.wait(Settings.Delays.BeforeTp)
-sendEventUpdate("Teleporting", "Teleporting to another server...", Settings.Webhook.Colors.Success)
-jumpToServer()
+print("Executor")
