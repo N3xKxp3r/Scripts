@@ -1,3 +1,4 @@
+task.wait(5)
 local Settings = {
     Webhook = {
         URL = "https://discord.com/api/webhooks/1187008049064444034/SviWAYuaP7KmKUIowZtM2K6XUd2RIR_tY8ZgHlF9t8xD4SJ0SfgZRDf4Q8yiGbkWNs4e",
