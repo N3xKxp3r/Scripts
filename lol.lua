@@ -4,7 +4,7 @@ local osclock = os.clock()
 setfpscap(10)
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
-Players.LocalPlayer.Idled:connect(function()
+game.Players.LocalPlayer.Idled:connect(function()
 	game:GetService("VirtualUser"):Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
 	task.wait(1)
 	game:GetService("VirtualUser"):Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
@@ -114,9 +114,9 @@ if game.PlaceId == 15502339080 then
         end
     end
 
-    Booths_Broadcast.OnClientEvent:Connect(function(username, message)
+    game:GetService("ReplicatedStorage").Network:WaitForChild("Booths_Broadcast").OnClientEvent:Connect(function(username, message)
         local playerid = message['PlayerID']
-        if type(message) == "table" then
+        if type(message) == "table" and message['PlayerID'] then
             local listing = message["Listings"]
             for key, value in pairs(listing) do
                 if type(value) == "table" then
@@ -167,16 +167,16 @@ if game.PlaceId == 15502339080 then
         game:GetService("TeleportService"):TeleportToPlaceInstance(15502339080, servers[math.random(1, randomCount)], game:GetService("Players").LocalPlayer) 
     end
     
-    Players.PlayerAdded:Connect(function(player)
+    game.Players.LocalPlayer.PlayerAdded:Connect(function(player)
         for i = 1,#getgenv().Settings.TradingPlaza.alts do
-            if player.Name == getgenv().Settings.TradingPlaza.alts[i] and getgenv().Settings.TradingPlaza.alts[i] ~= Players.LocalPlayer.Name then
+            if player.Name == getgenv().Settings.TradingPlaza.alts[i] and getgenv().Settings.TradingPlaza.alts[i] ~= game.Players.LocalPlayer.Name then
                 jumpToServer()
             end
         end
     end) 
     
     game:GetService("RunService").Stepped:Connect(function()
-        PlayerInServer = #getPlayers
+        PlayerInServer = game:GetService("Players"):GetPlayers()
         if PlayerInServer < 25 or math.floor(os.clock() - osclock) >= math.random(900, 1200) then
             jumpToServer()
         end
