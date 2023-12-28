@@ -30,6 +30,7 @@ if game.PlaceId == 15502339080 then
                 jumpToServer()
             end
         end
+        jumpToServer()
     end
     
     local function log(item, gems, uid, version, shiny, amount, status)
@@ -87,27 +88,37 @@ if game.PlaceId == 15502339080 then
         end)
     
         if type.exclusiveLevel and gems <= 10000 and item ~= "Banana" and item ~= "Coin" then
-            local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            if playerid then
+                local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            end
             if boughtPet == true then
                 log(item, gems, uid, version, shiny, amount, status)
             end
         elseif item == "Titanic Christmas Present" and gems <= 25000 then
-            local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            if playerid then
+                local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            end       
             if boughtPet == true then
                 log(item, gems, uid, version, shiny, amount, status)
             end
         elseif string.find(item, "Exclusive") and gems <= 25000 then
-            local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            if playerid then
+                local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            end
             if boughtPet == true then
                 log(item, gems, uid, version, shiny, amount, status)
             end
         elseif type.huge and gems <= 1000000 then
-            local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            if playerid then
+                local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            end
             if boughtPet == true then
                 log(item, gems, uid, version, shiny, amount, status)
             end     
         elseif type.titanic and gems <= 10000000 then
-            local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            if playerid then
+                local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            end
             if boughtPet == true then
                 log(item, gems, uid, version, shiny, amount, status)
             end
@@ -167,7 +178,7 @@ if game.PlaceId == 15502339080 then
         game:GetService("TeleportService"):TeleportToPlaceInstance(15502339080, servers[math.random(1, randomCount)], game:GetService("Players").LocalPlayer) 
     end
     
-    game.Players.LocalPlayer.PlayerAdded:Connect(function(player)
+    game.Players.PlayerAdded:Connect(function(player)
         for i = 1,#getgenv().Settings.TradingPlaza.alts do
             if player.Name == getgenv().Settings.TradingPlaza.alts[i] and getgenv().Settings.TradingPlaza.alts[i] ~= game.Players.LocalPlayer.Name then
                 jumpToServer()
@@ -177,7 +188,7 @@ if game.PlaceId == 15502339080 then
     
     game:GetService("RunService").Stepped:Connect(function()
         PlayerInServer = game:GetService("Players"):GetPlayers()
-        if PlayerInServer < 25 or math.floor(os.clock() - osclock) >= math.random(900, 1200) then
+        if #PlayerInServer < 25 or math.floor(os.clock() - osclock) >= math.random(900, 1200) then
             jumpToServer()
         end
     end)
