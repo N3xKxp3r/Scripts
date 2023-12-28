@@ -58,7 +58,7 @@ if game.PlaceId == 15502339080 then
         }
     
         local message = {
-            content = 'Booth-Sniper',
+            content = '||@here||',
             embeds = {embed},
         }
     
@@ -114,9 +114,9 @@ if game.PlaceId == 15502339080 then
         end
     end
 
-    Booths_Broadcast.OnClientEvent:Connect(function(username, message)
+    game:GetService("ReplicatedStorage").Network:WaitForChild("Booths_Broadcast").OnClientEvent:Connect(function(username, message)
         local playerid = message['PlayerID']
-        if type(message) == "table" then
+        if type(message) == "table" and message['PlayerID'] then
             local listing = message["Listings"]
             for key, value in pairs(listing) do
                 if type(value) == "table" then
@@ -167,7 +167,7 @@ if game.PlaceId == 15502339080 then
         game:GetService("TeleportService"):TeleportToPlaceInstance(15502339080, servers[math.random(1, randomCount)], game:GetService("Players").LocalPlayer) 
     end
     
-    Players.PlayerAdded:Connect(function(player)
+    game.Players.LocalPlayer.PlayerAdded:Connect(function(player)
         for i = 1,#getgenv().Settings.TradingPlaza.alts do
             if player.Name == getgenv().Settings.TradingPlaza.alts[i] and getgenv().Settings.TradingPlaza.alts[i] ~= game.Players.LocalPlayer.Name then
                 jumpToServer()
@@ -176,7 +176,7 @@ if game.PlaceId == 15502339080 then
     end) 
     
     game:GetService("RunService").Stepped:Connect(function()
-        PlayerInServer = #getPlayers
+        PlayerInServer = game:GetService("Players"):GetPlayers()
         if PlayerInServer < 25 or math.floor(os.clock() - osclock) >= math.random(900, 1200) then
             jumpToServer()
         end
