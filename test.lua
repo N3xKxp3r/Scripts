@@ -1,266 +1,221 @@
-getgenv().Config = {
-    ["Items"] = {
-        ["Prince Donkey"] = {price = 15, maxAmount = 1000},
-        ["Princess Dragon"] = {price = 15, maxAmount = 1000},
-        ["Fortune"] = {price = 15, maxAmount = 1000},
-        ["Charm Stone"] = {price = 15, maxAmount = 1000},
-        ["Titanic Christmas Present"] = {price = 15, maxAmount = 1000},
-        ["Medium Christmas"] = {price = 15, maxAmount = 1000},
-        ["Large Christmas Present"] = {price = 15, maxAmount = 1000},
-        ["X-Large Christmas Present"] = {price = 15, maxAmount = 1000},
-        ["Small Christmas Present"] = {price = 15, maxAmount = 1000},
-        ["Hot Cocoa"] = {price = 15, maxAmount = 1000},
-        ["Candycane"] = {price = 15, maxAmount = 1000},
-        ["Christmas Cookie"] = {price = 15, maxAmount = 1000},
-        ["Fortune Flag"] = {price = 15, maxAmount = 1000},
-        ["Diamonds Flag"] = {price = 15, maxAmount = 1000},
-        ["Coins Flag"] = {price = 15, maxAmount = 1000},
-        ["Magnet Flag"] = {price = 15, maxAmount = 1000},
-        ["Hasty Flag"] = {price = 15, maxAmount = 1000},
-        ["Royalty Charm"] = {price = 15, maxAmount = 1000},
-        ["Glittering Charm"] = {price = 15, maxAmount = 1000},
-        ["Strength Charm"] = {price = 15, maxAmount = 1000},
-        ["Diamonds Charm"] = {price = 15, maxAmount = 1000},
-        ["Coins Charm"] = {price = 15, maxAmount = 1000},
-        ["Bonus Charm"] = {price = 15, maxAmount = 1000},
-        ["Insta-Plant Capsule"] = {price = 15, maxAmount = 1000},
-        ["Golden Watering Can"] = {price = 15, maxAmount = 1000},
-        ["Banana"] = {price = 15, maxAmount = 1000},
-        ["Apple"] = {price = 15, maxAmount = 1000},
-        ["Pineapple"] = {price = 15, maxAmount = 1000},
-        ["Orange"] = {price = 15, maxAmount = 1000},
-        ["Golden Shovel"] = {price = 15, maxAmount = 1000},
-        ["Golden Fishing Rod"] = {price = 15, maxAmount = 1000},
-        ["Toy Bone"] = {price = 15, maxAmount = 1000},
-        ["Toy Ball"] = {price = 15, maxAmount = 1000},
-        ["Clan Voucher"] = {price = 15, maxAmount = 1000},
-        ["Rainbow Fruit"] = {price = 15, maxAmount = 1000},
-        ["Gift Bag"] = {price = 15, maxAmount = 1000},
-        ["Large Gift Bag"] = {price = 15, maxAmount = 1000},
-        ["Agility Charm"] = {price = 15, maxAmount = 1000},
-        ["Spinny Wheel Ticket"] = {price = 15, maxAmount = 1000},
-        ["Booth Slot Voucher"] = {price = 15, maxAmount = 1000},
-        ["Magic Coin Jar"] = {price = 15, maxAmount = 1000},
-        ["Crystal Key"] = {price = 15, maxAmount = 1000},
-        ["Crystal Key: Upper Half"] = {price = 15, maxAmount = 1000},
-        ["Crystal Key: Lower Half"] = {price = 15, maxAmount = 1000},
-        ["Basic Coin Jar"] = {price = 15, maxAmount = 1000},
-        ["TNT"] = {price = 15, maxAmount = 1000},
-        ["Comet"] = {price = 15, maxAmount = 1000},
-        ["Giant Coin Jar"] = {price = 15, maxAmount = 1000},
-        ["Squeaky Toy"] = {price = 15, maxAmount = 1000},
-        ["TNT Crate"] = {price = 15, maxAmount = 1000},
-        ["Nametag"] = {price = 15, maxAmount = 1000},
-        ["Coins I"] = {price = 15, maxAmount = 1000},
-        ["Coins II"] = {price = 15, maxAmount = 1000},
-        ["Coins III"] = {price = 15, maxAmount = 1000},
-        ["Coins IV"] = {price = 15, maxAmount = 1000},
-        ["Coins V"] = {price = 15, maxAmount = 1000},
-        ["Tap Power I"] = {price = 15, maxAmount = 1000},
-        ["Tap Power II"] = {price = 15, maxAmount = 1000},
-        ["Tap Power III"] = {price = 15, maxAmount = 1000},
-        ["Tap Power IV"] = {price = 15, maxAmount = 1000},
-        ["Tap Power V"] = {price = 15, maxAmount = 1000},
-        ["Criticals I"] = {price = 15, maxAmount = 1000},
-        ["Criticals II"] = {price = 15, maxAmount = 1000},
-        ["Criticals III"] = {price = 15, maxAmount = 1000},
-        ["Criticals IV"] = {price = 15, maxAmount = 1000},
-        ["Criticals V"] = {price = 15, maxAmount = 1000},
-        ["Strong Pets I"] = {price = 15, maxAmount = 1000},
-        ["Strong Pets II"] = {price = 15, maxAmount = 1000},
-        ["Strong Pets III"] = {price = 15, maxAmount = 1000},
-        ["Strong Pets IV"] = {price = 15, maxAmount = 1000},
-        ["Strong Pets V"] = {price = 15, maxAmount = 1000},
-        ["Treasure Hunter I"] = {price = 15, maxAmount = 1000},
-        ["Treasure Hunter II"] = {price = 15, maxAmount = 1000},
-        ["Treasure Hunter III"] = {price = 15, maxAmount = 1000},
-        ["Treasure Hunter IV"] = {price = 15, maxAmount = 1000},
-        ["Treasure Hunter V"] = {price = 15, maxAmount = 1000},
-        ["Magnet I"] = {price = 15, maxAmount = 1000},
-        ["Magnet II"] = {price = 15, maxAmount = 1000},
-        ["Magnet III"] = {price = 15, maxAmount = 1000},
-        ["Speed I"] = {price = 15, maxAmount = 1000},
-        ["Speed II"] = {price = 15, maxAmount = 1000},
-        ["Speed III"] = {price = 15, maxAmount = 1000},
-        ["Speed IV"] = {price = 15, maxAmount = 1000},
-        ["Speed V"] = {price = 15, maxAmount = 1000},
-        ["Diamonds I"] = {price = 15, maxAmount = 1000},
-        ["Diamonds II"] = {price = 15, maxAmount = 1000},
-        ["Diamonds III"] = {price = 15, maxAmount = 1000},
-        ["Diamonds IV"] = {price = 15, maxAmount = 1000},
-        ["Diamonds V"] = {price = 15, maxAmount = 1000},
-        ["Lucky Eggs I"] = {price = 15, maxAmount = 1000},
-        ["Lucky Eggs II"] = {price = 15, maxAmount = 1000},
-        ["Lucky Eggs III"] = {price = 15, maxAmount = 1000},
-        ["Lucky Eggs IV"] = {price = 15, maxAmount = 1000},
-        ["Lucky Eggs V"] = {price = 15, maxAmount = 1000},
-        ["Starfall"] = {price = 15, maxAmount = 1000},
-        ["Super Lightning"] = {price = 15, maxAmount = 1000},
-        ["Tap Teamwork"] = {price = 15, maxAmount = 1000},
-        ["Happy Pets"] = {price = 15, maxAmount = 1000},
-        ["Lightning"] = {price = 15, maxAmount = 1000},
-        ["Blast"] = {price = 15, maxAmount = 1000},
-        ["Chest Breaker"] = {price = 15, maxAmount = 1000},
-        ["Exotic Pet"] = {price = 15, maxAmount = 1000},
-        ["Huge Hunter"] = {price = 15, maxAmount = 1000},
-        ["Lucky Block"] = {price = 15, maxAmount = 1000},
-        ["Chest Mimic Fortune"] = {price = 15, maxAmount = 1000},
-        ["Shiny Hunter"] = {price = 15, maxAmount = 1000},
-        ["Fireworks"] = {price = 15, maxAmount = 1000},
-        ["Midas Touch"] = {price = 15, maxAmount = 1000},
-        ["Speed Potion I"] = {price = 15, maxAmount = 1000},
-        ["Speed Potion II"] = {price = 15, maxAmount = 1000},
-        ["Speed Potion III"] = {price = 15, maxAmount = 1000},
-        ["Speed Potion IV"] = {price = 15, maxAmount = 1000},
-        ["Speed Potion V"] = {price = 15, maxAmount = 1000},
-        ["Speed Potion VI"] = {price = 15, maxAmount = 1000},
-        ["Treasure Hunter Potion I"] = {price = 15, maxAmount = 1000},
-        ["Treasure Hunter Potion II"] = {price = 15, maxAmount = 1000},
-        ["Treasure Hunter Potion III"] = {price = 15, maxAmount = 1000},
-        ["Treasure Hunter Potion IV"] = {price = 15, maxAmount = 1000},
-        ["Treasure Hunter Potion V"] = {price = 15, maxAmount = 1000},
-        ["Treasure Hunter Potion VI"] = {price = 15, maxAmount = 1000},
-        ["Lucky Potion I"] = {price = 15, maxAmount = 1000},
-        ["Lucky Potion II"] = {price = 15, maxAmount = 1000},
-        ["Lucky Potion III"] = {price = 15, maxAmount = 1000},
-        ["Lucky Potion IV"] = {price = 15, maxAmount = 1000},
-        ["Lucky Potion V"] = {price = 15, maxAmount = 1000},
-        ["Lucky Potion VI"] = {price = 15, maxAmount = 1000},
-        ["Diamonds Potion I"] = {price = 15, maxAmount = 1000},
-        ["Diamonds Potion II"] = {price = 15, maxAmount = 1000},
-        ["Diamonds Potion III"] = {price = 15, maxAmount = 1000},
-        ["Diamonds Potion IV"] = {price = 15, maxAmount = 1000},
-        ["Diamonds Potion V"] = {price = 15, maxAmount = 1000},
-        ["Diamonds Potion VI"] = {price = 15, maxAmount = 1000},
-        ["Damage Potion I"] = {price = 15, maxAmount = 1000},
-        ["Damage Potion II"] = {price = 15, maxAmount = 1000},
-        ["Damage Potion III"] = {price = 15, maxAmount = 1000},
-        ["Damage Potion IV"] = {price = 15, maxAmount = 1000},
-        ["Damage Potion V"] = {price = 15, maxAmount = 1000},
-        ["Damage Potion VI"] = {price = 15, maxAmount = 1000},
-        ["Coins Potion I"] = {price = 15, maxAmount = 1000},
-        ["Coins Potion II"] = {price = 15, maxAmount = 1000},
-        ["Coins Potion III"] = {price = 15, maxAmount = 1000},
-        ["Coins Potion IV"] = {price = 15, maxAmount = 1000},
-        ["Coins Potion V"] = {price = 15, maxAmount = 1000},
-        ["Coins Potion VI"] = {price = 15, maxAmount = 1000},
-        ["The Cocktail"] = {price = 15, maxAmount = 1000},
-    },
-    ["Settings"] = {
-        ["timeFormat"] = "24h",
-        ["hourOffset"] = 1,
+repeat wait() until game:IsLoaded()
+local osclock = os.clock()
+
+setfpscap(10)
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+
+game.Players.LocalPlayer.Idled:connect(function()
+	game:GetService("VirtualUser"):Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+	task.wait(1)
+	game:GetService("VirtualUser"):Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+end)
+
+getgenv().Settings = {
+    ["TradingPlaza"] = {
+        ["alts"] = {"N3xKxp3r_Alt1", "N3xKxp3r_Alt2", "N3xKxp3r_Alt3","qtkacper123"},
+        ["webhook"] = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
+        ["webhookFail"] = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
     }
 }
 
-local function processListingInfo(uid, gems, item, version, shiny, amount, username, playerID)
-
-    local versionText
-    if version == 2 then
-        versionText = "Rainbow"
-    elseif version == 1 then
-        versionText = "Golden"
-    else
-        versionText = "Normal"
-    end
-
-    local snipeMessage = versionText
-    if shiny then
-        snipeMessage = snipeMessage .. " Shiny"
-    end
-    snipeMessage = snipeMessage .. " " .. item
-    print("Sniped")
-
-    local function formatTimeAndOffset(timeFormat, hourOffset)
-        local currentTimeUTC = os.time(os.date("!*t"))
-        local offsetSeconds = hourOffset * 3600
-        local adjustedTime = currentTimeUTC + offsetSeconds
-        local formattedTime = os.date(
-            timeFormat == "12h" and "%I:%M:%S %p" or "%H:%M:%S",
-            adjustedTime
-        ):gsub("^%s*(.-)%s*$", "%1")
+if game.PlaceId == 15502339080 then
+    print("1")
+    for _, player in ipairs(game:GetService("Players"):GetPlayers()) do
+        if player ~= game.Players.LocalPlayer and player.Character then
+            player.Character:ClearAllChildren()
+        end
     
-        return formattedTime
-    end
-
-    local SaveModule = require(game.ReplicatedStorage.Library.Client.Save)
-    local playerData = SaveModule.Get()
-
-    local currentTime = formatTimeAndOffset(getgenv().Config.Settings.timeFormat, getgenv().Config.Settings.hourOffset)
-    local timezoneInfo = "GMT" .. (getgenv().Config.Settings.hourOffset >= 0 and "+" or "") .. getgenv().Config.Settings.hourOffset
-
-    local fields = {
-        { name = "Item Name:", value = "||**" .. item .. "**||", inline = false }, -- Change 'Pet Name' to 'Item Name'
-        { name = "Version:", value = "||**" .. (getgenv().Config.Items[item] and versionText or "N/A") .. (shiny and " Shiny" or "") .. "**||", inline = false },
-        { name = "Amount:", value = "||**" .. tostring(amount) .. "**||", inline = false },
-        { name = "Item ID:", value = "||**" .. tostring(uid) .. "**||", inline = false }, -- Change 'Pet ID' to 'Item ID'
-        { name = "Price:", value = "||**" .. tostring(gems) .. " Gems**||", inline = false },
-        { name = "Sniped From:", value = "||**" .. tostring(username) .. "**||", inline = false },
-        { name = "Alt:", value = "**" .. game.Players.LocalPlayer.Name .. "**", inline = false }
-    }
-
-    local message = {
-        content = "New Item Sniped!",'
-        embeds = {
-            {
-                title = snipeMessage,
-                fields = fields,
-                author = { name = "New Item Sniped!" },
-                footer = {
-                    text = "**Sniped at " .. currentTime + 5 .. " | Timezone: " .. timezoneInfo .. "**"
-                },
-            }
-        },
-        username = "N3xKxp3r",
-        attachments = {}
-    }
-
-    local http = game:GetService("HttpService")
-    local jsonMessage = http:JSONEncode(message)
-
-    http:PostAsync(
-        "https://discord.com/api/webhooks/1183417697707507732/PTTSxQHkOtzQMJTIk3Sick5FL7u6Dn-sgusAeHMMa-qYq8aGoVN_XZKnTw7Ha83W9WW-",
-        jsonMessage,
-        Enum.HttpContentType.ApplicationJson,
-        false
-    )
-end
-
-local function checkListing(uid, gems, item, version, shiny, amount, username, playerID)
-    gems = tonumber(gems)
-
-    if getgenv().Config.Items[item] then
-        local itemInfo = getgenv().Config.Items[item]
-
-        if gems <= itemInfo.price and amount <= itemInfo.maxAmount then
-            game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerID, uid)
-
-            processListingInfo(uid, gems, item, version, shiny, amount, username, playerID)
+        for _, alt in ipairs(getgenv().Settings.TradingPlaza.alts) do
+            if player.Name == alt and alt ~= game.Players.LocalPlayer.Name then
+                jumpToServer()
+            end
         end
     end
-end
+    
+    local function log(item, gems, uid, version, shiny, amount, status)
+        local webcolor = status and 3399065 or 16711680
+        local weburl = status and getgenv().Settings.TradingPlaza.webhook or getgenv().Settings.TradingPlaza.webhookFail
+    
+        version = (version == 1 and "Golden") or (version == 2 and "Rainbow") or version
+        amount = amount or 1
+    
+        local fields = {
+            {name = "Item:", value = tonumber(item) or "nil"},
+            {name = "Uid:", value = tostring(uid) or "nil"},
+            {name = "Price:", value = tonumber(gems) or "nil"},
+            {name = "Amount:", value = tonumber(amount) or 1},
+            {name = "Version:", value = tostring(version) or "nil"},
+            {name = "Shiny", value = tostring(shiny) or "nil"},
+            {name = "Status", value = tostring(status) or "nil"},
+            {name = "Leftover:", value = game:GetService('Players').LocalPlayer.leaderstats["💎 Diamonds"].Value or "nil"}
+        }        
+    
+        local embed = {
+            title = 'Snipe Details',
+            color = webcolor,
+            timestamp = DateTime.now():ToIsoDate(),
+            fields = fields,
+        }
+    
+        local message = {
+            content = 'Booth-Sniper',
+            embeds = {embed},
+        }
+    
+        local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
+    
+        local success, response = pcall(function()
+            game:GetService("HttpService"):PostAsync(weburl, jsonMessage)
+        end)
+    
+        if not success then
+            request({
+                Url = weburl,
+                Method = 'POST',
+                Headers = {['Content-Type'] = 'application/json'},
+                Body = jsonMessage,
+            })
+        end
+    end
 
-game:GetService("ReplicatedStorage").Network:WaitForChild("Booths_Broadcast").OnClientEvent:Connect(function(username, message)
-    local playerID = message['PlayerID']
-    if type(message) == "table" then
-        local listing = message["Listings"]
-        for key, value in pairs(listing) do
-            if type(value) == "table" then
-                local uid = key
-                local gems = value["DiamondCost"]
-                local itemdata = value["ItemData"]
-                if itemdata then
-                    local data = itemdata["data"]
-                    if data then
-                        local item = data["id"]
-                        local version = data["pt"]
-                        local shiny = data["sh"]
-                        local amount = data["_am"]
-                        checkListing(uid, gems, item, version, shiny, amount, username, playerID)
+    local function CheckBooth(item, gems, uid, version, shiny, amount, username, playerid, status)
+        local Library = require(game:GetService("ReplicatedStorage"):WaitForChild('Library'))
+        gems = tonumber(gems)
+        local type = {}
+        pcall(function()
+            type = Library.Directory.Pets[item]
+        end)
+    
+        if type.exclusiveLevel and gems <= 10000 and item ~= "Banana" and item ~= "Coin" then
+            local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            if boughtPet == true then
+                log(item, gems, uid, version, shiny, amount, status)
+            end
+        elseif item == "Titanic Christmas Present" and gems <= 25000 then
+            local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            if boughtPet == true then
+                log(item, gems, uid, version, shiny, amount, status)
+            end
+        elseif string.find(item, "Exclusive") and gems <= 25000 then
+            local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            if boughtPet == true then
+                log(item, gems, uid, version, shiny, amount, status)
+            end
+        elseif type.huge and gems <= 1000000 then
+            local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            if boughtPet == true then
+                log(item, gems, uid, version, shiny, amount, status)
+            end     
+        elseif type.titanic and gems <= 10000000 then
+            local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+            if boughtPet == true then
+                log(item, gems, uid, version, shiny, amount, status)
+            end
+        end
+    end
+
+    Booths_Broadcast.OnClientEvent:Connect(function(username, message)
+        local playerid = message['PlayerID']
+        if type(message) == "table" then
+            local listing = message["Listings"]
+            for key, value in pairs(listing) do
+                if type(value) == "table" then
+                    local uid = key
+                    local gems = value["DiamondCost"]
+                    local itemdata = value["ItemData"]
+    
+                    if itemdata then
+                        local data = itemdata["data"]
+    
+                        if data then
+                            local item = data["id"]
+                            local version = data["pt"]
+                            local shiny = data["sh"]
+                            local amount = data["_am"]
+                            CheckBooth(item, gems, uid, version, shiny, amount, username, playerid)
+                        end
                     end
                 end
             end
         end
-    end
-end)
+    end)
 
-print("Executor")
+    local function jumpToServer() 
+        local sfUrl = "https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=%s&limit=%s&excludeFullGames=true" 
+        local req = request({ Url = string.format(sfUrl, 15502339080, "Desc", 100) }) 
+        local body = game:GetService("HttpService"):JSONDecode(req.Body) 
+        local deep = math.random(1, 3)
+        if deep > 1 then 
+            for i = 1, deep, 1 do 
+                 req = request({ Url = string.format(sfUrl .. "&cursor=" .. body.nextPageCursor, 15502339080, "Desc", 100) }) 
+                 body = game:GetService("HttpService"):JSONDecode(req.Body) 
+                 task.wait(0.1)
+            end 
+        end 
+        local servers = {} 
+        if body and body.data then 
+            for i, v in next, body.data do 
+                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= game.JobId then
+                    table.insert(servers, v.id)
+                end
+            end
+        end
+        local randomCount = #servers
+        if not randomCount then
+           randomCount = 2
+        end
+        game:GetService("TeleportService"):TeleportToPlaceInstance(15502339080, servers[math.random(1, randomCount)], game:GetService("Players").LocalPlayer) 
+    end
+    
+    Players.PlayerAdded:Connect(function(player)
+        for i = 1,#getgenv().Settings.TradingPlaza.alts do
+            if player.Name == getgenv().Settings.TradingPlaza.alts[i] and getgenv().Settings.TradingPlaza.alts[i] ~= Players.LocalPlayer.Name then
+                jumpToServer()
+            end
+        end
+    end) 
+    
+    game:GetService("RunService").Stepped:Connect(function()
+        PlayerInServer = #getPlayers
+        if PlayerInServer < 25 or math.floor(os.clock() - osclock) >= math.random(900, 1200) then
+            jumpToServer()
+        end
+    end)
+    print("2")
+else
+    print("3")
+    local function jumpToServer()
+        local sfUrl = "https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=%s&limit=%s&excludeFullGames=true"
+        local req = request({
+            Url = string.format(sfUrl, 15502339080, "Desc", 100)
+        })
+        local body = game:GetService("HttpService"):JSONDecode(req.Body)
+        local deep = math.random(1, 3)
+        if deep > 1 then
+            for i = 1, deep, 1 do
+                req = request({
+                    Url = string.format(sfUrl .. "&cursor=" .. body.nextPageCursor, 15502339080, "Desc", 100)
+                })
+                body = game:GetService("HttpService"):JSONDecode(req.Body)
+                task.wait(0.1)
+            end
+        end
+        local servers = {}
+        if body and body.data then
+            for i, v in next, body.data do
+                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= game.JobId then
+                    table.insert(servers, 1, v.id)
+                end
+            end
+        end
+        local randomCount = # servers
+        if not randomCount then
+            randomCount = 2
+        end
+        game:GetService("TeleportService"):TeleportToPlaceInstance(15502339080, servers[math.random(1, randomCount)], game:GetService("Players").LocalPlayer)
+    end
+    while wait(0.1) do
+        print("4")
+        jumpToServer()
+    end
+end
