@@ -134,14 +134,14 @@ if game.PlaceId == 15502339080 then
             if boughtPet == true then
                 log(item, gems, uid, version, shiny, amount, status)
             end
-        elseif type.huge and gems <= 1000000 then
+        elseif type.huge and gems <= 250000 then
             if playerid then
                 local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
             end
             if boughtPet == true then
                 log(item, gems, uid, version, shiny, amount, status)
             end     
-        elseif type.titanic and gems <= 10000000 then
+        elseif type.titanic and gems <= 1000000 then
             if playerid then
                 local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
             end
@@ -187,11 +187,71 @@ if game.PlaceId == 15502339080 then
     
     game:GetService("RunService").Stepped:Connect(function()
         PlayerInServer = game:GetService("Players"):GetPlayers()
-        if #PlayerInServer < 25 or math.floor(os.clock() - osclock) >= math.random(900, 1200) then
+        if #PlayerInServer < 25 or math.floor(os.clock() - osclock) >= math.random(300, 600) then
+            local fields = {
+                {name = "Alt:", value = game.Players.LocalPlayer},
+            }        
+        
+            local embed = {
+                title = 'Server Hopping!',
+                color = webcolor,
+                timestamp = DateTime.now():ToIsoDate(),
+                fields = fields,
+            }
+        
+            local message = {
+                content = '||@here||',
+                embeds = {embed},
+            }
+        
+            local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
+        
+            local success, response = pcall(function()
+                game:GetService("HttpService"):PostAsync(weburl, jsonMessage)
+            end)
+        
+            if not success then
+                request({
+                    Url = weburl,
+                    Method = 'POST',
+                    Headers = {['Content-Type'] = 'application/json'},
+                    Body = jsonMessage,
+                })
+            end
             jumpToServer()
         end
     end)
     print("2")
+    local fields = {
+        {name = "Alt:", value = game.Players.LocalPlayer},
+    }        
+
+    local embed = {
+        title = 'Started!',
+        color = webcolor,
+        timestamp = DateTime.now():ToIsoDate(),
+        fields = fields,
+    }
+
+    local message = {
+        content = '||@here||',
+        embeds = {embed},
+    }
+
+    local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
+
+    local success, response = pcall(function()
+        game:GetService("HttpService"):PostAsync(weburl, jsonMessage)
+    end)
+
+    if not success then
+        request({
+            Url = weburl,
+            Method = 'POST',
+            Headers = {['Content-Type'] = 'application/json'},
+            Body = jsonMessage,
+        })
+    end
 else
     print("3")
     local function jumpToServer()
@@ -223,6 +283,36 @@ else
             randomCount = 2
         end
         game:GetService("TeleportService"):TeleportToPlaceInstance(15502339080, servers[math.random(1, randomCount)], game:GetService("Players").LocalPlayer)
+    end
+    local fields = {
+        {name = "Alt:", value = game.Players.LocalPlayer},
+    }        
+
+    local embed = {
+        title = 'Joining Trading Plaza!',
+        color = webcolor,
+        timestamp = DateTime.now():ToIsoDate(),
+        fields = fields,
+    }
+
+    local message = {
+        content = '||@here||',
+        embeds = {embed},
+    }
+
+    local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
+
+    local success, response = pcall(function()
+        game:GetService("HttpService"):PostAsync(weburl, jsonMessage)
+    end)
+
+    if not success then
+        request({
+            Url = weburl,
+            Method = 'POST',
+            Headers = {['Content-Type'] = 'application/json'},
+            Body = jsonMessage,
+        })
     end
     while wait(0.1) do
         print("4")
