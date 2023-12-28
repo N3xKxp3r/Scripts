@@ -4,11 +4,10 @@ local osclock = os.clock()
 setfpscap(10)
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
-local vu = game:GetService("VirtualUser")
-Players.LocalPlayer.Idled:connect(function()
-	vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+game.Players.LocalPlayer.Idled:connect(function()
+	game:GetService("VirtualUser"):Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
 	task.wait(1)
-	vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+	game:GetService("VirtualUser"):Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
 end)
 
 getgenv().Settings = {
@@ -20,6 +19,7 @@ getgenv().Settings = {
 }
 
 if game.PlaceId == 15502339080 then
+    print("1")
     for _, player in ipairs(game:GetService("Players"):GetPlayers()) do
         if player ~= game.Players.LocalPlayer and player.Character then
             player.Character:ClearAllChildren()
@@ -169,7 +169,7 @@ if game.PlaceId == 15502339080 then
     
     Players.PlayerAdded:Connect(function(player)
         for i = 1,#getgenv().Settings.TradingPlaza.alts do
-            if player.Name == getgenv().Settings.TradingPlaza.alts[i] and getgenv().Settings.TradingPlaza.alts[i] ~= Players.LocalPlayer.Name then
+            if player.Name == getgenv().Settings.TradingPlaza.alts[i] and getgenv().Settings.TradingPlaza.alts[i] ~= game.Players.LocalPlayer.Name then
                 jumpToServer()
             end
         end
@@ -181,7 +181,9 @@ if game.PlaceId == 15502339080 then
             jumpToServer()
         end
     end)
+    print("2")
 else
+    print("3")
     local function jumpToServer()
         local sfUrl = "https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=%s&limit=%s&excludeFullGames=true"
         local req = request({
@@ -213,6 +215,7 @@ else
         game:GetService("TeleportService"):TeleportToPlaceInstance(15502339080, servers[math.random(1, randomCount)], game:GetService("Players").LocalPlayer)
     end
     while wait(0.1) do
+        print("4")
         jumpToServer()
     end
 end
