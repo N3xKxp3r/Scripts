@@ -114,7 +114,7 @@ if game.PlaceId == 15502339080 then
         end
     end
 
-    Booths_Broadcast.OnClientEvent:Connect(function(username, message)
+    game:GetService("ReplicatedStorage").Network:WaitForChild("Booths_Broadcast").OnClientEvent:Connect(function(username, message)
         local playerid = message['PlayerID']
         if type(message) == "table" then
             local listing = message["Listings"]
@@ -169,7 +169,7 @@ if game.PlaceId == 15502339080 then
     
     Players.PlayerAdded:Connect(function(player)
         for i = 1,#getgenv().Settings.TradingPlaza.alts do
-            if player.Name == getgenv().Settings.TradingPlaza.alts[i] and getgenv().Settings.TradingPlaza.alts[i] ~= Players.LocalPlayer.Name then
+            if player.Name == getgenv().Settings.TradingPlaza.alts[i] and getgenv().Settings.TradingPlaza.alts[i] ~= game.Players.LocalPlayer.Name then
                 jumpToServer()
             end
         end
