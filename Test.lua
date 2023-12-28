@@ -152,10 +152,10 @@ if game.PlaceId == 15502339080 then
     end
 
     game:GetService("ReplicatedStorage").Network:WaitForChild("Booths_Broadcast").OnClientEvent:Connect(function(username, message)
-        local playerid = message['PlayerID']
         if type(message) == "table" and message['PlayerID'] then
-            local listing = message["Listings"]
-            for key, value in pairs(listing) do
+            local playerID = message['PlayerID']
+            local listings = message["Listings"]
+            for key, value in pairs(listings) do
                 if type(value) == "table" then
                     local uid = key
                     local gems = value["DiamondCost"]
