@@ -92,12 +92,12 @@ if game.PlaceId == 15502339080 then
         local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
     
         local success, response = pcall(function()
-            game:GetService("HttpService"):PostAsync(weburl, jsonMessage)
+            game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
         end)
     
         if not success then
             request({
-                Url = weburl,
+                Url = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
                 Method = 'POST',
                 Headers = {['Content-Type'] = 'application/json'},
                 Body = jsonMessage,
@@ -207,12 +207,12 @@ if game.PlaceId == 15502339080 then
             local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
         
             local success, response = pcall(function()
-                game:GetService("HttpService"):PostAsync(weburl, jsonMessage)
+                game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
             end)
         
             if not success then
                 request({
-                    Url = weburl,
+                    Url = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
                     Method = 'POST',
                     Headers = {['Content-Type'] = 'application/json'},
                     Body = jsonMessage,
@@ -241,12 +241,12 @@ if game.PlaceId == 15502339080 then
     local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
 
     local success, response = pcall(function()
-        game:GetService("HttpService"):PostAsync(weburl, jsonMessage)
+        game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
     end)
 
     if not success then
         request({
-            Url = weburl,
+            Url = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
             Method = 'POST',
             Headers = {['Content-Type'] = 'application/json'},
             Body = jsonMessage,
@@ -303,12 +303,12 @@ else
     local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
 
     local success, response = pcall(function()
-        game:GetService("HttpService"):PostAsync(weburl, jsonMessage)
+        game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
     end)
 
     if not success then
         request({
-            Url = weburl,
+            Url = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
             Method = 'POST',
             Headers = {['Content-Type'] = 'application/json'},
             Body = jsonMessage,
