@@ -12,9 +12,7 @@ end)
 
 getgenv().Settings = {
     ["TradingPlaza"] = {
-        ["alts"] = {"N3xKxp3r_Alt1", "N3xKxp3r_Alt2", "N3xKxp3r_Alt3","qtkacper123"},
-        ["webhook"] = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
-        ["webhookFail"] = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
+        ["alts"] = {"N3xKxp3r_Alt1", "N3xKxp3r_Alt2", "N3xKxp3r_Alt3","qtkacper123"}
     }
 }
 
@@ -60,47 +58,74 @@ if game.PlaceId == 15502339080 then
     end
     
     local function log(item, gems, uid, version, shiny, amount, status)
-        local webcolor = status and 3399065 or 16711680
-        local weburl = status and getgenv().Settings.TradingPlaza.webhook or getgenv().Settings.TradingPlaza.webhookFail
-    
         version = (version == 1 and "Golden") or (version == 2 and "Rainbow") or version
         amount = amount or 1
     
-        local fields = {
-            {name = "Item:", value = tonumber(item) or "nil"},
-            {name = "Uid:", value = tostring(uid) or "nil"},
-            {name = "Price:", value = tonumber(gems) or "nil"},
-            {name = "Amount:", value = tonumber(amount) or 1},
-            {name = "Version:", value = tostring(version) or "nil"},
-            {name = "Shiny", value = tostring(shiny) or "nil"},
-            {name = "Status", value = tostring(status) or "nil"},
-            {name = "Leftover:", value = game:GetService('Players').LocalPlayer.leaderstats["💎 Diamonds"].Value or "nil"}
-        }        
-    
-        local embed = {
-            title = 'Snipe Details',
-            color = webcolor,
-            timestamp = DateTime.now():ToIsoDate(),
-            fields = fields,
+        local message1 = {
+            ['content'] = "@here",
+            ['embeds'] = {
+                {
+                    ['title'] = "Booth-Sniper",
+                    ["color"] = 0x00000,
+                    ["timestamp"] = DateTime.now():ToIsoDate(),
+                    ['fields'] = {
+                        {
+                            ['name'] = "Item:",
+                            ['value'] = tostring(Item),
+                            ['inline'] = false,
+                        },
+                        {
+                            ['name'] = "Uid:",
+                            ['value'] = tostring(uid),
+                            ['inline'] = false,
+                        },
+                        {
+                            ['name'] = "Price:",
+                            ['value'] = tostring(gems) .. " Gems",
+                            ['inline'] = false,
+                        },
+                        {
+                            ['name'] = "Amount:",
+                            ['value'] = tonumber(amount) or 1,
+                            ['inline'] = false,
+                        },
+                        {
+                            ['name'] = "Version:",
+                            ['value'] = tostring(version),
+                            ['inline'] = false,
+                        },
+                        {
+                            ['name'] = "Shiny:",
+                            ['value'] = tostring(shiny),
+                            ['inline'] = false,
+                        },
+                        {
+                            ['name'] = "Status:",
+                            ['value'] = tostring(status),
+                            ['inline'] = false,
+                        },
+                        {
+                            ['name'] = "LeftOver:",
+                            ['value'] = game:GetService('Players').LocalPlayer.leaderstats["💎 Diamonds"].Value .. " Gems",
+                            ['inline'] = false,
+                        },
+                    },
+                },
+            }
         }
-    
-        local message = {
-            content = '||@here||',
-            embeds = {embed},
-        }
-    
-        local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
-    
+        
+        local jsonMessage = http:JSONEncode(message1)
         local success, response = pcall(function()
-            game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
+                http:PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
         end)
-    
-        if not success then
-            request({
+        if success == false then
+                local response = request({
                 Url = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
-                Method = 'POST',
-                Headers = {['Content-Type'] = 'application/json'},
-                Body = jsonMessage,
+                Method = "POST",
+                Headers = {
+                    ["Content-Type"] = "application/json"
+                },
+                Body = jsonMessage
             })
         end
     end
@@ -188,68 +213,72 @@ if game.PlaceId == 15502339080 then
     game:GetService("RunService").Stepped:Connect(function()
         PlayerInServer = game:GetService("Players"):GetPlayers()
         if #PlayerInServer < 25 or math.floor(os.clock() - osclock) >= math.random(300, 600) then
-            local fields = {
-                {name = "Alt:", value = game.Players.LocalPlayer},
-            }        
-        
-            local embed = {
-                title = 'Server Hopping!',
-                color = webcolor,
-                timestamp = DateTime.now():ToIsoDate(),
-                fields = fields,
+            local message1 = {
+                ['content'] = "",
+                ['embeds'] = {
+                    {
+                        ['title'] = "Server-Hop",
+                        ["color"] = 0x00000,
+                        ["timestamp"] = DateTime.now():ToIsoDate(),
+                        ['fields'] = {
+                            {
+                                ['name'] = "Alt:",
+                                ['value'] = game.Players.LocalPlayer,
+                                ['inline'] = false,
+                            },
+                        },
+                    },
+                }
             }
-        
-            local message = {
-                content = '||@here||',
-                embeds = {embed},
-            }
-        
-            local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
-        
+            
+            local jsonMessage = http:JSONEncode(message1)
             local success, response = pcall(function()
-                game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
+                    http:PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
             end)
-        
-            if not success then
-                request({
+            if success == false then
+                    local response = request({
                     Url = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
-                    Method = 'POST',
-                    Headers = {['Content-Type'] = 'application/json'},
-                    Body = jsonMessage,
+                    Method = "POST",
+                    Headers = {
+                        ["Content-Type"] = "application/json"
+                    },
+                    Body = jsonMessage
                 })
             end
             jumpToServer()
         end
     end)
     print("2")
-    local fields = {
-        {name = "Alt:", value = game.Players.LocalPlayer},
-    }        
-
-    local embed = {
-        title = 'Started!',
-        color = webcolor,
-        timestamp = DateTime.now():ToIsoDate(),
-        fields = fields,
+    local message1 = {
+        ['content'] = "",
+        ['embeds'] = {
+            {
+                ['title'] = "Server-Hop",
+                ["color"] = 0x00000,
+                ["timestamp"] = DateTime.now():ToIsoDate(),
+                ['fields'] = {
+                    {
+                        ['name'] = "Alt:",
+                        ['value'] = game.Players.LocalPlayer,
+                        ['inline'] = false,
+                    },
+                },
+            },
+        }
     }
-
-    local message = {
-        content = '||@here||',
-        embeds = {embed},
-    }
-
-    local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
-
+    
+    local jsonMessage = http:JSONEncode(message1)
     local success, response = pcall(function()
-        game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
+            http:PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
     end)
-
-    if not success then
-        request({
+    if success == false then
+            local response = request({
             Url = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
-            Method = 'POST',
-            Headers = {['Content-Type'] = 'application/json'},
-            Body = jsonMessage,
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = jsonMessage
         })
     end
 else
@@ -284,38 +313,40 @@ else
         end
         game:GetService("TeleportService"):TeleportToPlaceInstance(15502339080, servers[math.random(1, randomCount)], game:GetService("Players").LocalPlayer)
     end
-    local fields = {
-        {name = "Alt:", value = game.Players.LocalPlayer},
-    }        
-
-    local embed = {
-        title = 'Joining Trading Plaza!',
-        color = webcolor,
-        timestamp = DateTime.now():ToIsoDate(),
-        fields = fields,
-    }
-
-    local message = {
-        content = '||@here||',
-        embeds = {embed},
-    }
-
-    local jsonMessage = game:GetService("HttpService"):JSONEncode(message)
-
-    local success, response = pcall(function()
-        game:GetService("HttpService"):PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
-    end)
-
-    if not success then
-        request({
-            Url = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
-            Method = 'POST',
-            Headers = {['Content-Type'] = 'application/json'},
-            Body = jsonMessage,
-        })
-    end
     while wait(0.1) do
         print("4")
+        local message1 = {
+            ['content'] = "",
+            ['embeds'] = {
+                {
+                    ['title'] = "Server-Hop",
+                    ["color"] = 0x00000,
+                    ["timestamp"] = DateTime.now():ToIsoDate(),
+                    ['fields'] = {
+                        {
+                            ['name'] = "Alt:",
+                            ['value'] = game.Players.LocalPlayer,
+                            ['inline'] = false,
+                        },
+                    },
+                },
+            }
+        }
+        
+        local jsonMessage = http:JSONEncode(message1)
+        local success, response = pcall(function()
+                http:PostAsync("https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why", jsonMessage)
+        end)
+        if success == false then
+                local response = request({
+                Url = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
+                Method = "POST",
+                Headers = {
+                    ["Content-Type"] = "application/json"
+                },
+                Body = jsonMessage
+            })
+        end
         jumpToServer()
     end
 end
