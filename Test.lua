@@ -1,3 +1,4 @@
+-- Configuration
 getgenv().Config = {
     ["Discord"] = {
         webhookUrl = "https://discord.com/api/webhooks/1187515692489121933/UX26bntG_oMrQIY5Xv4haUbPDZ53piXp3_CX3OL0xJOoe9pv8WNxIZQJ_wNiRjP78Why",
@@ -7,6 +8,7 @@ getgenv().Config = {
     }
 }
 
+-- Function to send a webhook with advanced error handling
 local function sendWebhook(message, fields)
     local data = {
         username = getgenv().Config.Discord.username,
@@ -27,16 +29,31 @@ local function sendWebhook(message, fields)
         return game:GetService("HttpService"):PostAsync(getgenv().Config.Discord.webhookUrl, game:GetService("HttpService"):JSONEncode(data), Enum.HttpContentType.ApplicationJson, false, headers)
     end)
 
-    if success and response then
-        print("Webhook sent successfully.")
-        print(response)
+    if success then
+        if response and response.StatusCode == 200 then
+            print("Webhook sent successfully.")
+            print(response)
+        else
+            warn("Failed to send webhook. Unexpected response:")
+            warn(response)
+        end
     else
-        warn("Failed to send webhook:")
-        warn("Success:", success)
-        warn("Response:", response)
+        warn("Failed to send webhook. Error message:")
+        warn(response)
+
+        local errorMessage = tostring(response)
+        local lineNumber = errorMessage:match(":(%d+):")
+        
+        if lineNumber then
+            lineNumber = tonumber(lineNumber)
+            local scriptName = getfenv(2).script.Name
+            warn("Error occurred in script:", scriptName)
+            warn("Error line number:", lineNumber)
+        end
     end
 end
 
+-- Example usage
 local message = "Hello, this is a webhook message!"
 local webhookFields = {
     {name = "Field 1", value = "Value 1", inline = false},
