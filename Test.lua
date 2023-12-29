@@ -9,11 +9,11 @@ getgenv().Config = {
 
 local function sendWebhook(message, fields)
     local data = {
-        content = message,
         username = getgenv().Config.Discord.username,
         avatar_url = getgenv().Config.Discord.avatarUrl,
         embeds = {{
             color = tonumber(getgenv().Config.Discord.color, 16),
+            description = message,
             fields = fields,
             timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ")
         }}
@@ -32,7 +32,8 @@ local function sendWebhook(message, fields)
         print(response)
     else
         warn("Failed to send webhook:")
-        warn(response)
+        warn("Success:", success)
+        warn("Response:", response)
     end
 end
 
