@@ -76,8 +76,8 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
         ['embeds'] = {
             {
 		["author"] = {
-			["name"] = "Luna 🌚",
-			["icon_url"] = "https://cdn.discordapp.com/attachments/1149218291957637132/1190527382583525416/new-moon-face_1f31a.png?ex=65a22006&is=658fab06&hm=55f8900eef039709c8e57c96702f8fb7df520333ec6510a81c31fc746193fbf2&",
+			["name"] = "N3xKxp3r",
+			["icon_url"] = "https://cdn.discordapp.com/avatars/1182130448684556289/a_023244b73c075d3756999b0b8cdb433e.gif?size=4096",
 		},
                 ['title'] = snipeMessage,
                 ["color"] = webcolor,
@@ -243,8 +243,8 @@ Players.PlayerAdded:Connect(function(player)
     end
 end) 
 
-while task.wait(1) do
-    if math.floor(os.clock() - osclock) >= math.random(900, 1200) then
+while task.wait(0.5) do
+    if math.floor(os.clock() - osclock) >= math.random(300, 600) then
         jumpToServer()
     end
 end
